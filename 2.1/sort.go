@@ -1,8 +1,8 @@
 package ex21
 
-// Sort take a slice of int and returns a new slice with the
-// elements sorted in ascending numerical order.
-func Sort(a []int) []int {
+// Sort take a slice of int and returns a new slice with the elements of the
+// underlying array sorted in ascending numerical order.
+func Sort(a []int) {
 	for j := 1; j < len(a); j++ {
 		key := a[j]
 
@@ -13,13 +13,11 @@ func Sort(a []int) []int {
 		}
 		a[i+1] = key
 	}
-
-	return a
 }
 
-// Desc take a slice of int and returns a new slice with the
-// elements sorted in descending numerical order.
-func Desc(a []int) []int {
+// Desc take a slice of int and returns a new slice with the elements of the
+// underlying array sorted in descending numerical order.
+func Desc(a []int) {
 	for j := len(a) - 2; j >= 0; j-- {
 		key := a[j]
 
@@ -30,6 +28,4 @@ func Desc(a []int) []int {
 		}
 		a[i-1] = key
 	}
-
-	return a
 }

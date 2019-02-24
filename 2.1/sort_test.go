@@ -16,15 +16,15 @@ var sortCases = []struct {
 
 func TestSort(t *testing.T) {
 	for _, c := range sortCases {
-		s := Sort(c.i)
+		Sort(c.i)
 
-		if len(s) != len(c.o) {
-			t.Fatalf("unexpected length: got %d, want %d", len(s), len(c.o))
+		if len(c.i) != len(c.o) {
+			t.Fatalf("unexpected length: got %d, want %d", len(c.i), len(c.o))
 		}
 
 		for n := range c.o {
-			if s[n] != c.o[n] {
-				t.Fatalf("unexpected value: got %v, want %v", s, c.o)
+			if c.i[n] != c.o[n] {
+				t.Fatalf("unexpected value: got %v, want %v", c.i, c.o)
 			}
 		}
 	}
@@ -44,15 +44,15 @@ var descCases = []struct {
 
 func TestDesc(t *testing.T) {
 	for _, c := range descCases {
-		s := Desc(c.i)
+		Desc(c.i)
 
-		if len(s) != len(c.o) {
-			t.Fatalf("unexpected length: got %d, want %d", len(s), len(c.o))
+		if len(c.i) != len(c.o) {
+			t.Fatalf("unexpected length: got %d, want %d", len(c.i), len(c.o))
 		}
 
 		for n := range c.o {
-			if s[n] != c.o[n] {
-				t.Fatalf("unexpected value: got %v, want %v", s, c.o)
+			if c.i[n] != c.o[n] {
+				t.Fatalf("unexpected value: got %v, want %v", c.i, c.o)
 			}
 		}
 	}
